@@ -20,15 +20,15 @@
 
     <div class="c-wrapper c-fixed-components">
         @include('backend.includes.header')
-        @include('includes.partials.read-only')
-        @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
+        {{-- @include('includes.partials.read-only') --}}
+        {{-- @include('includes.partials.logged-in-as') --}}
+        {{-- @include('includes.partials.announcements') --}}
 
         <div class="c-body">
             <main class="c-main">
                 <div class="container-fluid">
                     <div class="fade-in">
-                        @include('includes.partials.messages')
+                        {{-- @include('includes.partials.messages') --}}
                         @yield('content')
                     </div><!--fade-in-->
                 </div><!--container-fluid-->

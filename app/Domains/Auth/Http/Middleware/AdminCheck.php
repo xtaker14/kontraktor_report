@@ -17,7 +17,7 @@ class AdminCheck
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user() && $request->user()->isType(User::TYPE_ADMIN)) {
+        if ($request->user() && !$request->user()->isUser()) {
             return $next($request);
         }
 

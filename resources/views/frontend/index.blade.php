@@ -67,18 +67,16 @@
         @stack('after-styles')
     </head>
     <body>
-        @include('includes.partials.read-only')
-        @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
+        {{-- @include('includes.partials.read-only') --}}
+        {{-- @include('includes.partials.logged-in-as') --}}
+        {{-- @include('includes.partials.announcements') --}}
 
         <div id="app" class="flex-center position-ref full-height">
             <div class="top-right links">
                 @auth
                     @if ($logged_in_user->isUser())
                         <a href="{{ route('frontend.user.dashboard') }}">@lang('Dashboard')</a>
-                    @endif
-
-                    @if ($logged_in_user->isAdmin())
+                    @else
                         <a href="{{ route('admin.dashboard') }}">@lang('Administration')</a>
                     @endif
                     

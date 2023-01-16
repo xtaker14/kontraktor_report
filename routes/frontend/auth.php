@@ -11,6 +11,7 @@ use App\Domains\Auth\Http\Controllers\Frontend\Auth\SocialController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\TwoFactorAuthenticationController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\UpdatePasswordController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\VerificationController;
+use App\Http\Controllers\LoginActionController;
 use Tabuna\Breadcrumbs\Trail;
 
 /*
@@ -82,8 +83,8 @@ Route::group(['as' => 'auth.'], function () {
 
     Route::group(['middleware' => 'guest'], function () {
         // Authentication
-        Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-        Route::post('login', [LoginController::class, 'login']);
+        Route::get('login', [LoginActionController::class, 'showLoginForm'])->name('login');
+        Route::post('login', [LoginActionController::class, 'login']);
 
         // Registration
         Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');

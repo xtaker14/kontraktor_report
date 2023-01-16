@@ -32,10 +32,10 @@ class AnnouncementService extends BaseService
      */
     public function getForFrontend()
     {
-        return $this->model::enabled()
-            ->forArea($this->model::TYPE_FRONTEND)
-            ->inTimeFrame()
-            ->get();
+        // return $this->model::enabled()
+        //     ->forArea($this->model::TYPE_FRONTEND)
+        //     ->inTimeFrame()
+        //     ->get();
     }
 
     /**
@@ -50,9 +50,9 @@ class AnnouncementService extends BaseService
      */
     public function getForBackend()
     {
-        return $this->model::enabled()
-            ->forArea($this->model::TYPE_BACKEND)
-            ->inTimeFrame()
-            ->get();
+        // return $this->model::enabled()
+        //     ->forArea($this->model::TYPE_BACKEND)
+        //     ->inTimeFrame()
+        //     ->get();
     }
 }

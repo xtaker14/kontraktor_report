@@ -46,7 +46,7 @@
                     <strong>@lang('Account')</strong>
                 </div>
 
-                @if ($logged_in_user->isAdmin())
+                @if (!$logged_in_user->isUser())
                     <x-utils.link
                         :href="route('admin.dashboard')"
                         :text="__('Administration')"
