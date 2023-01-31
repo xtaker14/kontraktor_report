@@ -161,6 +161,22 @@
                 </li>
             </ul>
         </li>
+        <li class="c-sidebar-nav-dropdown">
+            <x-utils.link
+                href="#"
+                icon="c-sidebar-nav-icon cil-table"
+                class="c-sidebar-nav-dropdown-toggle"
+                :text="__('Form')" />
+
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item">
+                    <x-utils.link
+                        :href="route('menu.cr-table.index')"
+                        class="c-sidebar-nav-link"
+                        :text="__('Form')" />
+                </li>
+            </ul>
+        </li>
 
         @if (
             $logged_in_user->hasAllAccess() ||
