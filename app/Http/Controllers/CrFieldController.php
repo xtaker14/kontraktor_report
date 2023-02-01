@@ -32,9 +32,12 @@ class CrFieldController
         $this->form = CrField::generateFormInput();
     }
 
-    public function index()
+    public function list($table_id)
     {
-        return view('cr-field.index');
+        $table = CrTable::findOrFail($table_id);
+        return view('cr-field.index', [
+            'table' => $table
+        ]);
     }
 
     public function create_field_table($table_id)

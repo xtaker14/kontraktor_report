@@ -88,17 +88,17 @@ class CrTableController
             if (File::exists(public_path('files/'.$file_name))) {
                 unlink(public_path('files/'.$file_name));
             }
-            $request->file('excel_file')->move(public_path('files/'.$file_name));
+            $request->file('excel_file')->move(public_path('files'), $file_name);
         }
 
-        $update_data = $request->except(['_token', '_method', 'slug', 'name']);
+        $update_data = $request->except(['_token', '_method', 'slug', 'name', 'excel_file']);
 
         $update = CrTable::where('id', $table_detail->id)->update($update_data);
 
         if ($update) {
             return redirect()->route('menu.cr-table.index')->withFlashSuccess(__('The form was successfully updated.'));
         } else {
-            return redirect()->route('menu.cr-table.index')->withFlashSuccess(__('The form was successfully updated.'));
+            return redirect()->route('menu.cr-table.edit', ['table_id' => $table_detail->id])->withFlashDanger(__('Something wrong when update data.'));
         }
         
     }

@@ -9,6 +9,7 @@ Route::group([
     'as' => 'cr-field.',
     'middleware' => 'role:'.config('boilerplate.access.role.admin'),
 ], function () {
+    Route::get('list/{table_id}', [CrFieldController::class, 'list'])->name('list');
     Route::get('create-field-table/{table_id}', [CrFieldController::class, 'create_field_table'])->name('create-field-table');
     Route::post('preview-field/{table_id}', [CrFieldController::class, 'preview_field'])->name('preview-field');
     Route::post('save-preview-field', [CrFieldController::class, 'save_preview_field'])->name('save-preview-field');
